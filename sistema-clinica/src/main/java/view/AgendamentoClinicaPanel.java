@@ -26,19 +26,196 @@ public class AgendamentoClinicaPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        DataConsulta = new javax.swing.JFormattedTextField();
+        DataConsultaText = new javax.swing.JLabel();
+        HorarioConsulta = new javax.swing.JFormattedTextField();
+        HorarioConsultaText1 = new javax.swing.JLabel();
+        TipoConsulta = new javax.swing.JComboBox<>();
+        TipoConsultaText1 = new javax.swing.JLabel();
+        Medico = new javax.swing.JComboBox<>();
+        MedicoText = new javax.swing.JLabel();
+        CPFPaciente = new javax.swing.JFormattedTextField();
+        CPFText = new javax.swing.JLabel();
+        PacienteNome = new javax.swing.JTextField();
+        Salvar = new javax.swing.JButton();
+
+        setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 1, 1));
+
+        DataConsulta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        DataConsulta.setText("09/09/2026");
+        DataConsulta.addActionListener(this::DataConsultaActionPerformed);
+
+        DataConsultaText.setText("Data da Consulta ");
+
+        HorarioConsulta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
+        HorarioConsulta.setText("15:00");
+        HorarioConsulta.addActionListener(this::HorarioConsultaActionPerformed);
+
+        HorarioConsultaText1.setText("Horário da Consulta");
+
+        TipoConsulta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Conveniado", "Particular" }));
+
+        TipoConsultaText1.setText("Tipo da Consulta");
+
+        Medico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Conveniado", "Particular" }));
+
+        MedicoText.setText("Médico");
+
+        try {
+            CPFPaciente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        CPFPaciente.setText("000.000.000-00");
+        CPFPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        CPFPaciente.addActionListener(this::CPFPacienteActionPerformed);
+
+        CPFText.setText("CPF");
+
+        PacienteNome.setText("Digite o nome do paciente...");
+        PacienteNome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                PacienteNomeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                PacienteNomeFocusLost(evt);
+            }
+        });
+        PacienteNome.addActionListener(this::PacienteNomeActionPerformed);
+
+        Salvar.setText("Salvar");
+        Salvar.addActionListener(this::SalvarActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(PacienteNome, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(CPFPaciente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addComponent(CPFText)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGap(28, 28, 28)
+                                    .addComponent(MedicoText)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Medico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(TipoConsultaText1)
+                                    .addGap(17, 17, 17)
+                                    .addComponent(TipoConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Salvar))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(DataConsultaText)
+                                .addComponent(DataConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(HorarioConsultaText1)
+                                .addComponent(HorarioConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(586, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PacienteNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CPFText)
+                .addGap(7, 7, 7)
+                .addComponent(CPFPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(HorarioConsultaText1)
+                        .addGap(4, 4, 4)
+                        .addComponent(HorarioConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(DataConsultaText)
+                        .addGap(4, 4, 4)
+                        .addComponent(DataConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TipoConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TipoConsultaText1))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Medico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MedicoText)
+                    .addComponent(Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(431, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void DataConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataConsultaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DataConsultaActionPerformed
+
+    private void HorarioConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorarioConsultaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HorarioConsultaActionPerformed
+
+    private void CPFPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CPFPacienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CPFPacienteActionPerformed
+
+    private void PacienteNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PacienteNomeFocusGained
+        if (PacienteNome.getText().equals("Digite o nome do paciente...")) {
+            PacienteNome.setText("");
+            PacienteNome.setForeground(java.awt.Color.BLACK);
+        }
+    }//GEN-LAST:event_PacienteNomeFocusGained
+
+    private void PacienteNomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PacienteNomeFocusLost
+
+        if (PacienteNome.getText().trim().isEmpty()) {
+            PacienteNome.setText("Digite o nome do paciente...");
+            PacienteNome.setForeground(java.awt.Color.GRAY);
+        }
+    }//GEN-LAST:event_PacienteNomeFocusLost
+
+    private void PacienteNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PacienteNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PacienteNomeActionPerformed
+
+    private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
+        limparCampos();
+    }//GEN-LAST:event_SalvarActionPerformed
+
+    private void limparCampos(){
+        PacienteNome.setText("");
+        CPFPaciente.setValue(null);
+        HorarioConsulta.setValue(null);
+        DataConsulta.setValue(null);
+        Medico.setSelectedIndex(0);
+        TipoConsulta.setSelectedIndex(0);
+ 
+        
+        PacienteNome.setText("Digite o nome do paciente...");
+        PacienteNome.setForeground(java.awt.Color.GRAY);
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFormattedTextField CPFPaciente;
+    private javax.swing.JLabel CPFText;
+    private javax.swing.JFormattedTextField DataConsulta;
+    private javax.swing.JLabel DataConsultaText;
+    private javax.swing.JFormattedTextField HorarioConsulta;
+    private javax.swing.JLabel HorarioConsultaText1;
+    private javax.swing.JComboBox<String> Medico;
+    private javax.swing.JLabel MedicoText;
+    private javax.swing.JTextField PacienteNome;
+    private javax.swing.JButton Salvar;
+    private javax.swing.JComboBox<String> TipoConsulta;
+    private javax.swing.JLabel TipoConsultaText1;
     // End of variables declaration//GEN-END:variables
 }
