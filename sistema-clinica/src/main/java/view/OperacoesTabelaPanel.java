@@ -4,17 +4,33 @@
  */
 package view;
 
+
+
 /**
  *
  * @author artur
  */
-public class OperacoesTabela extends javax.swing.JPanel {
-
+public class OperacoesTabelaPanel extends javax.swing.JPanel {
+    
+    private String ticketSelecionado = null;
     /**
      * Creates new form OperacoesPanel
      */
-    public OperacoesTabela() {
+    public OperacoesTabelaPanel() {
         initComponents();
+        
+        Deletar.setEnabled(false); 
+        Editar.setEnabled(false);  
+
+        
+        TabelaRegistros.getSelectionModel().addListSelectionListener(e -> {
+            
+            boolean temSelecao = TabelaRegistros.getSelectedRow() >= 0;
+
+            
+            Deletar.setEnabled(temSelecao);
+            Editar.setEnabled(temSelecao);
+        });
     }
 
     /**
@@ -41,7 +57,6 @@ public class OperacoesTabela extends javax.swing.JPanel {
         ConfirmarDelete.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         ConfirmarDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         ConfirmarDelete.setLocation(new java.awt.Point(0, 0));
-        ConfirmarDelete.setLocationByPlatform(true);
         ConfirmarDelete.setMinimumSize(new java.awt.Dimension(400, 200));
         ConfirmarDelete.setResizable(false);
 
@@ -160,13 +175,43 @@ public class OperacoesTabela extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarActionPerformed
-        // TODO add your handling code here:
+        int selected = TabelaRegistros.getSelectedRow();
+    
+        if (selected >= 0) {
+
+            String ticket = TabelaRegistros.getValueAt(selected, 0).toString();
+            String paciente = TabelaRegistros.getValueAt(selected, 1).toString();
+
+            String tipo = ticket.startsWith("CC") ? "Clinica" : "Cirurgia";
+
+            java.awt.Frame parentFrame = (java.awt.Frame) javax.swing.SwingUtilities.getWindowAncestor(this);
+
+            EditarRegistroDialog dialog = new EditarRegistroDialog(parentFrame, true, tipo, ticket, paciente);
+
+            dialog.setLocationRelativeTo(this);
+            dialog.setVisible(true);
+
+            }
     }//GEN-LAST:event_EditarActionPerformed
 
     private void DeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeletarActionPerformed
-        
-        ConfirmarDelete.setVisible(true);
-        
+
+        int selected = TabelaRegistros.getSelectedRow();
+    
+        if (selected >= 0) {
+     
+            Object valorCelula = TabelaRegistros.getValueAt(selected, 0);
+ 
+            if (valorCelula != null) {
+                this.ticketSelecionado = valorCelula.toString(); 
+
+
+                ConfirmarDelete.setLocationRelativeTo(this);
+                ConfirmarDelete.setVisible(true);
+            }
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Por favor, selecione uma consulta na tabela para deletar.", "Aviso", javax.swing.JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_DeletarActionPerformed
 
     private void BarraBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BarraBuscaActionPerformed
@@ -179,11 +224,13 @@ public class OperacoesTabela extends javax.swing.JPanel {
 
     private void ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarActionPerformed
      
-        int selected = TabelaRegistros.getSelectedRow();
-        if(selected >=0){
-            String CodTicket = TabelaRegistros.getValueAt(selected,1).toString();
-        }
-        ConfirmarDelete.dispose();
+        if (this.ticketSelecionado != null) {
+       
+        System.out.println("Deletando o ticket: " + this.ticketSelecionado); // Teste
+    }
+    
+    ConfirmarDelete.dispose(); // Fecha o pop-up
+    this.ticketSelecionado = null;
     }//GEN-LAST:event_ConfirmarActionPerformed
 
 

@@ -15,7 +15,7 @@ public class MainFrame extends javax.swing.JFrame {
         contentPanel.add(new CadastroMedicoPanel(), "MEDICO");
         contentPanel.add(new AgendamentoClinicaPanel(), "CLINICA");
         contentPanel.add(new AgendamentoCirurgiaPanel(), "CIRURGIA");
-        contentPanel.add(new OperacoesTabela(), "OPERACOES");
+        contentPanel.add(new OperacoesTabelaPanel(), "OPERACOES");
         
         
         
