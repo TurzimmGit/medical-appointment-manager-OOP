@@ -15,7 +15,7 @@ public class MainFrame extends javax.swing.JFrame {
         contentPanel.add(new CadastroMedicoPanel(), "MEDICO");
         contentPanel.add(new AgendamentoClinicaPanel(), "CLINICA");
         contentPanel.add(new AgendamentoCirurgiaPanel(), "CIRURGIA");
-        contentPanel.add(new OperacoesPanel(), "OPERACOES");
+        contentPanel.add(new OperacoesTabela(), "OPERACOES");
         
         
         
@@ -35,12 +35,13 @@ public class MainFrame extends javax.swing.JFrame {
         CadastroMedico = new javax.swing.JButton();
         AgendarConsulta = new javax.swing.JButton();
         AgendarCirurgia = new javax.swing.JButton();
-        OperacoesTabela = new javax.swing.JButton();
+        OperacaoTabela = new javax.swing.JButton();
         Exit = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        Copyright = new javax.swing.JLabel();
         contentPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.BorderLayout());
 
         BarraSuperior.setBackground(new java.awt.Color(51, 255, 255));
         BarraSuperior.setToolTipText("");
@@ -87,13 +88,13 @@ public class MainFrame extends javax.swing.JFrame {
         AgendarCirurgia.setText("Agendar Cirurgia");
         AgendarCirurgia.addActionListener(this::AgendarCirurgiaActionPerformed);
 
-        OperacoesTabela.setText("Operações/Tabela");
-        OperacoesTabela.addActionListener(this::OperacoesTabelaActionPerformed);
+        OperacaoTabela.setText("Operação/Tabela");
+        OperacaoTabela.addActionListener(this::OperacaoTabelaActionPerformed);
 
         Exit.setText("Sair");
         Exit.addActionListener(this::ExitActionPerformed);
 
-        jLabel1.setText("©2026 Artur Ferreira Sales");
+        Copyright.setText("©2026 Artur Ferreira Sales");
 
         javax.swing.GroupLayout BarraLateralLayout = new javax.swing.GroupLayout(BarraLateral);
         BarraLateral.setLayout(BarraLateralLayout);
@@ -108,7 +109,7 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(CadastroMedico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(AgendarConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(AgendarCirurgia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(OperacoesTabela, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(OperacaoTabela, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                             .addComponent(CadastroPaciente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BarraLateralLayout.createSequentialGroup()
@@ -117,7 +118,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGap(45, 45, 45))))
             .addGroup(BarraLateralLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel1)
+                .addComponent(Copyright)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         BarraLateralLayout.setVerticalGroup(
@@ -134,11 +135,11 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(AgendarCirurgia, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(OperacoesTabela, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(OperacaoTabela, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Exit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
+                .addComponent(Copyright)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -166,10 +167,10 @@ public class MainFrame extends javax.swing.JFrame {
         cl.show(contentPanel, "CIRURGIA");
     }//GEN-LAST:event_AgendarCirurgiaActionPerformed
 
-    private void OperacoesTabelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OperacoesTabelaActionPerformed
+    private void OperacaoTabelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OperacaoTabelaActionPerformed
         java.awt.CardLayout cl = (java.awt.CardLayout) contentPanel.getLayout();
         cl.show(contentPanel, "OPERACOES");
-    }//GEN-LAST:event_OperacoesTabelaActionPerformed
+    }//GEN-LAST:event_OperacaoTabelaActionPerformed
 
     private void CadastroPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroPacienteActionPerformed
         java.awt.CardLayout cl = (java.awt.CardLayout) contentPanel.getLayout();
@@ -218,10 +219,10 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel BarraSuperiorText;
     private javax.swing.JButton CadastroMedico;
     private javax.swing.JButton CadastroPaciente;
+    private javax.swing.JLabel Copyright;
     private javax.swing.JButton Exit;
     private javax.swing.JButton Home;
-    private javax.swing.JButton OperacoesTabela;
+    private javax.swing.JButton OperacaoTabela;
     private javax.swing.JPanel contentPanel;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

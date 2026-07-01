@@ -100,7 +100,7 @@
                               <Component id="CadastroMedico" alignment="0" max="32767" attributes="0"/>
                               <Component id="AgendarConsulta" alignment="0" max="32767" attributes="0"/>
                               <Component id="AgendarCirurgia" alignment="1" max="32767" attributes="0"/>
-                              <Component id="OperacoesTabela" alignment="1" pref="168" max="32767" attributes="0"/>
+                              <Component id="OperacaoTabela" alignment="1" pref="168" max="32767" attributes="0"/>
                               <Component id="CadastroPaciente" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -114,7 +114,7 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="Copyright" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -133,11 +133,11 @@
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   <Component id="AgendarCirurgia" min="-2" pref="73" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="OperacoesTabela" min="-2" pref="73" max="-2" attributes="0"/>
+                  <Component id="OperacaoTabela" min="-2" pref="73" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="Exit" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="Copyright" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="17" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -187,12 +187,12 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AgendarCirurgiaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="OperacoesTabela">
+        <Component class="javax.swing.JButton" name="OperacaoTabela">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Opera&#xe7;&#xf5;es/Tabela"/>
+            <Property name="text" type="java.lang.String" value="Opera&#xe7;&#xe3;o/Tabela"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OperacoesTabelaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OperacaoTabelaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Exit">
@@ -203,7 +203,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExitActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="Copyright">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xa9;2026 Artur Ferreira Sales"/>
           </Properties>
