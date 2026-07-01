@@ -3,7 +3,7 @@ package com.artur.clinica.app;
 public class Main {
     
     public static void main(String[] args) {
-        MenuController menu = new MenuController();
+        TerminalMenuView menu = new TerminalMenuView();
         int op;
 
         do { 

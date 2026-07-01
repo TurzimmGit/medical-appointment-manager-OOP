@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package view;
+package com.artur.clinica.view;
 
 /**
  *
  * @author artur
  */
-public class AgendamentoClinicaPanel extends javax.swing.JPanel {
+public class AgendamentoCirurgiaPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form AgendamentoClinicaPanel
+     * Creates new form AgendamentoCirurgiaPanel
      */
-    public AgendamentoClinicaPanel() {
+    public AgendamentoCirurgiaPanel() {
         initComponents();
     }
 
@@ -26,38 +26,21 @@ public class AgendamentoClinicaPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DataConsulta = new javax.swing.JFormattedTextField();
-        DataConsultaText = new javax.swing.JLabel();
-        HorarioConsulta = new javax.swing.JFormattedTextField();
-        HorarioConsultaText1 = new javax.swing.JLabel();
-        TipoConsulta = new javax.swing.JComboBox<>();
-        TipoConsultaText1 = new javax.swing.JLabel();
-        Medico = new javax.swing.JComboBox<>();
         MedicoText = new javax.swing.JLabel();
         CPFPaciente = new javax.swing.JFormattedTextField();
         CPFText = new javax.swing.JLabel();
         PacienteNome = new javax.swing.JTextField();
+        DataCirurgia = new javax.swing.JFormattedTextField();
         Salvar = new javax.swing.JButton();
+        DataCirurgiaText = new javax.swing.JLabel();
+        HorarioCirurgia = new javax.swing.JFormattedTextField();
+        HorarioCirurgiaText1 = new javax.swing.JLabel();
+        TipoAnestesia = new javax.swing.JComboBox<>();
+        TipoAnestesiaText = new javax.swing.JLabel();
+        Medico = new javax.swing.JComboBox<>();
+        TipoCirurgia = new javax.swing.JTextField();
 
         setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 1, 1));
-
-        DataConsulta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        DataConsulta.setText("09/09/2026");
-        DataConsulta.addActionListener(this::DataConsultaActionPerformed);
-
-        DataConsultaText.setText("Data da Consulta ");
-
-        HorarioConsulta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
-        HorarioConsulta.setText("15:00");
-        HorarioConsulta.addActionListener(this::HorarioConsultaActionPerformed);
-
-        HorarioConsultaText1.setText("Horário da Consulta");
-
-        TipoConsulta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Conveniado", "Particular" }));
-
-        TipoConsultaText1.setText("Tipo da Consulta");
-
-        Medico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Conveniado", "Particular" }));
 
         MedicoText.setText("Médico");
 
@@ -83,8 +66,37 @@ public class AgendamentoClinicaPanel extends javax.swing.JPanel {
         });
         PacienteNome.addActionListener(this::PacienteNomeActionPerformed);
 
+        DataCirurgia.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        DataCirurgia.setText("09/09/2026");
+        DataCirurgia.addActionListener(this::DataCirurgiaActionPerformed);
+
         Salvar.setText("Salvar");
         Salvar.addActionListener(this::SalvarActionPerformed);
+
+        DataCirurgiaText.setText("Data da Cirurgia ");
+
+        HorarioCirurgia.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
+        HorarioCirurgia.setText("15:00");
+        HorarioCirurgia.addActionListener(this::HorarioCirurgiaActionPerformed);
+
+        HorarioCirurgiaText1.setText("Horário da Cirurgia");
+
+        TipoAnestesia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Geral", "Local" }));
+
+        TipoAnestesiaText.setText("Tipo da Anestesia");
+
+        Medico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Conveniado", "Particular" }));
+
+        TipoCirurgia.setText("Digite o tipo da Cirurgia...");
+        TipoCirurgia.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                TipoCirurgiaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                TipoCirurgiaFocusLost(evt);
+            }
+        });
+        TipoCirurgia.addActionListener(this::TipoCirurgiaActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -103,25 +115,27 @@ public class AgendamentoClinicaPanel extends javax.swing.JPanel {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(TipoAnestesiaText)
+                                    .addGap(17, 17, 17)
+                                    .addComponent(TipoAnestesia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
                                     .addGap(28, 28, 28)
                                     .addComponent(MedicoText)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Medico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(TipoConsultaText1)
-                                    .addGap(17, 17, 17)
-                                    .addComponent(TipoConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Medico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 0, Short.MAX_VALUE)
                             .addComponent(Salvar))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(DataConsultaText)
-                                .addComponent(DataConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(DataCirurgiaText)
+                                .addComponent(DataCirurgia, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(HorarioConsultaText1)
-                                .addComponent(HorarioConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(586, Short.MAX_VALUE))
+                                .addComponent(HorarioCirurgiaText1)
+                                .addComponent(HorarioCirurgia, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(TipoCirurgia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(575, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,33 +149,27 @@ public class AgendamentoClinicaPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(HorarioConsultaText1)
+                        .addComponent(HorarioCirurgiaText1)
                         .addGap(4, 4, 4)
-                        .addComponent(HorarioConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(HorarioCirurgia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(DataConsultaText)
+                        .addComponent(DataCirurgiaText)
                         .addGap(4, 4, 4)
-                        .addComponent(DataConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(DataCirurgia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(TipoCirurgia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TipoConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TipoConsultaText1))
+                    .addComponent(TipoAnestesia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TipoAnestesiaText))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Medico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(MedicoText)
                     .addComponent(Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(431, Short.MAX_VALUE))
+                .addContainerGap(450, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void DataConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataConsultaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DataConsultaActionPerformed
-
-    private void HorarioConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorarioConsultaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HorarioConsultaActionPerformed
 
     private void CPFPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CPFPacienteActionPerformed
         // TODO add your handling code here:
@@ -186,36 +194,60 @@ public class AgendamentoClinicaPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_PacienteNomeActionPerformed
 
+    private void DataCirurgiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataCirurgiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DataCirurgiaActionPerformed
+
     private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
         limparCampos();
     }//GEN-LAST:event_SalvarActionPerformed
 
+    private void HorarioCirurgiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorarioCirurgiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HorarioCirurgiaActionPerformed
+
+    private void TipoCirurgiaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TipoCirurgiaFocusGained
+        if (TipoCirurgia.getText().equals("Digite o tipo da Cirurgia...")) {
+            TipoCirurgia.setText("Digite o tipo da Cirurgia...");
+            TipoCirurgia.setForeground(java.awt.Color.GRAY);
+        }
+    }//GEN-LAST:event_TipoCirurgiaFocusGained
+
+    private void TipoCirurgiaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TipoCirurgiaFocusLost
+        if (TipoCirurgia.getText().trim().isEmpty()) {
+            TipoCirurgia.setText("Digite o tipo da Cirurgia...");
+            TipoCirurgia.setForeground(java.awt.Color.GRAY);
+        }
+    }//GEN-LAST:event_TipoCirurgiaFocusLost
+
+    private void TipoCirurgiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoCirurgiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TipoCirurgiaActionPerformed
+    
     private void limparCampos(){
-        PacienteNome.setText("");
-        CPFPaciente.setValue(null);
-        HorarioConsulta.setValue(null);
-        DataConsulta.setValue(null);
-        Medico.setSelectedIndex(0);
-        TipoConsulta.setSelectedIndex(0);
- 
-        
         PacienteNome.setText("Digite o nome do paciente...");
         PacienteNome.setForeground(java.awt.Color.GRAY);
-        
+        CPFPaciente.setValue(null);
+        HorarioCirurgia.setValue(null);
+        DataCirurgia.setValue(null);
+        Medico.setSelectedIndex(0);
+        TipoAnestesia.setSelectedIndex(0);
+        TipoCirurgia.setText("Digite o tipo da Cirurgia...");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField CPFPaciente;
     private javax.swing.JLabel CPFText;
-    private javax.swing.JFormattedTextField DataConsulta;
-    private javax.swing.JLabel DataConsultaText;
-    private javax.swing.JFormattedTextField HorarioConsulta;
-    private javax.swing.JLabel HorarioConsultaText1;
+    private javax.swing.JFormattedTextField DataCirurgia;
+    private javax.swing.JLabel DataCirurgiaText;
+    private javax.swing.JFormattedTextField HorarioCirurgia;
+    private javax.swing.JLabel HorarioCirurgiaText1;
     private javax.swing.JComboBox<String> Medico;
     private javax.swing.JLabel MedicoText;
     private javax.swing.JTextField PacienteNome;
     private javax.swing.JButton Salvar;
-    private javax.swing.JComboBox<String> TipoConsulta;
-    private javax.swing.JLabel TipoConsultaText1;
+    private javax.swing.JComboBox<String> TipoAnestesia;
+    private javax.swing.JLabel TipoAnestesiaText;
+    private javax.swing.JTextField TipoCirurgia;
     // End of variables declaration//GEN-END:variables
 }

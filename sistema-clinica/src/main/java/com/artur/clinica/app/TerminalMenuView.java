@@ -13,7 +13,7 @@ import com.artur.clinica.model.Medico;
 import com.artur.clinica.model.Paciente;
 import com.artur.clinica.services.ConsultaPostgresDAO;
 
-public class MenuController {
+public class TerminalMenuView {
     private static final ConsultaPostgresDAO dao = new ConsultaPostgresDAO();
 
     public void exibirMenuPrincipal(){

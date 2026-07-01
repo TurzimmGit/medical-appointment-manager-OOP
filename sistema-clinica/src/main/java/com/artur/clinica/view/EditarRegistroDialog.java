@@ -1,4 +1,4 @@
-package view;
+package com.artur.clinica.view;
 
 import java.awt.CardLayout;
 

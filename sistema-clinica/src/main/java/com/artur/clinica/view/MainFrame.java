@@ -1,5 +1,5 @@
 
-package view;
+package com.artur.clinica.view;
 
 public class MainFrame extends javax.swing.JFrame {
     
